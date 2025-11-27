@@ -4,13 +4,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcMovie.Models;
 
-public class Movie
+public class Libro
 {
     public int Id { get; set; }
 
     [StringLength(60, MinimumLength = 3)]
     [Required]
-    public string? Title { get; set; }
+    public string? Nombre { get; set; }
+
+    [StringLength(60, MinimumLength = 3)]
+    [Required]
+    public string? Autor { get; set; }
 
     [Display(Name = "Release Date")]
     [DataType(DataType.Date)]

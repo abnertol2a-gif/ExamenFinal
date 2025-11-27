@@ -37,7 +37,7 @@ namespace WebApplication1.Controllers
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                movies = movies.Where(s => s.Title!.ToUpper().Contains(searchString.ToUpper()));
+                movies = movies.Where(s => s.Nombre!.ToUpper().Contains(searchString.ToUpper()));
             }
 
             if (!string.IsNullOrEmpty(movieGenre))
@@ -90,7 +90,7 @@ namespace WebApplication1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Autor,ReleaseDate,Genre,Price,Rating")] Libro movie)
         {
             if (ModelState.IsValid)
             {
@@ -123,7 +123,7 @@ namespace WebApplication1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Autor,ReleaseDate,Genre,Price,Rating")] Libro movie)
         {
             if (id != movie.Id)
             {

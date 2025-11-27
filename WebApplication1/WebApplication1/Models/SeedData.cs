@@ -21,37 +21,41 @@ public static class SeedData
                 return;   // DB has been seeded
             }
             context.Movie.AddRange(
-                new Movie
+                new Libro
                 {
-                    Title = "When Harry Met Sally",
-                    Rating = "R",
+                    Nombre = "When Harry Met Sally",
+                    Autor = "R",
                     ReleaseDate = DateTime.Parse("1989-2-12"),
                     Genre = "Romantic Comedy",
-                    Price = 7.99M
+                    Price = 7.99M,
+                    Rating = "123"
                 },
-                new Movie
+                new Libro
                 {
-                    Title = "Ghostbusters ",
-                    Rating = "R",
+                    Nombre = "Ghostbusters ",
+                    Autor = "R",
                     ReleaseDate = DateTime.Parse("1984-3-13"),
                     Genre = "Comedy",
-                    Price = 8.99M
+                    Price = 8.99M,
+                    Rating = "123"
                 },
-                new Movie
+                new Libro
                 {
-                    Title = "Ghostbusters 2",
-                    Rating = "R",
+                    Nombre = "Ghostbusters 2",
+                    Autor = "R",
                     ReleaseDate = DateTime.Parse("1986-2-23"),
                     Genre = "Comedy",
-                    Price = 9.99M
+                    Price = 9.99M,
+                    Rating = "123"
                 },
-                new Movie
+                new Libro
                 {
-                    Title = "Rio Bravo",
-                    Rating = "R",
+                    Nombre = "Rio Bravo",
+                    Autor = "R",
                     ReleaseDate = DateTime.Parse("1959-4-15"),
                     Genre = "Western",
-                    Price = 3.99M
+                    Price = 3.99M,
+                    Rating = "123"
                 }
             );
             context.SaveChanges();

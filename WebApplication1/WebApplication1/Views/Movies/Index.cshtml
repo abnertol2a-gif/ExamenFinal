@@ -25,7 +25,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Title)
+                @Html.DisplayNameFor(model => model.Movies![0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies![0].Autor)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movies![0].ReleaseDate)
@@ -47,7 +50,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ReleaseDate)
