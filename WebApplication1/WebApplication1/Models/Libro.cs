@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WebApplication1.Models;
 
 namespace MvcMovie.Models;
 
@@ -34,4 +35,6 @@ public class Libro
     [StringLength(5)]
     [Required]
     public string? Rating { get; set; }
+    public EstadoLibro Estado { get; set; }
+
 }
