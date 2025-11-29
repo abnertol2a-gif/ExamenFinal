@@ -22,46 +22,47 @@ public static class SeedData
                 return;   // DB has been seeded
             }
             context.Movie.AddRange(
-                new Libro
-                {
-                    Nombre = "When Harry Met Sally",
-                    Autor = "R",
-                    ReleaseDate = DateTime.Parse("1989-2-12"),
-                    Genre = "Romantic Comedy",
-                    Price = 7.99M,
-                    Rating = "123",
-                    Estado = EstadoLibro.Disponible
-                },
-                new Libro
-                {
-                    Nombre = "Ghostbusters ",
-                    Autor = "R",
-                    ReleaseDate = DateTime.Parse("1984-3-13"),
-                    Genre = "Comedy",
-                    Price = 8.99M,
-                    Rating = "123",
-                    Estado = EstadoLibro.Disponible
-                },
-                new Libro
-                {
-                    Nombre = "Ghostbusters 2",
-                    Autor = "R",
-                    ReleaseDate = DateTime.Parse("1986-2-23"),
-                    Genre = "Comedy",
-                    Price = 9.99M,
-                    Rating = "123",
-                    Estado = EstadoLibro.Disponible
-                },
-                new Libro
-                {
-                    Nombre = "Rio Bravo",
-                    Autor = "R",
-                    ReleaseDate = DateTime.Parse("1959-4-15"),
-                    Genre = "Western",
-                    Price = 3.99M,
-                    Rating = "123",
-                    Estado = EstadoLibro.Disponible
-                }
+            new Libro
+            {
+                Nombre = "La Sombra del Viento",
+                Autor = "Carlos Ruiz Zafón",
+                ReleaseDate = DateTime.Parse("2001-06-06"),
+                Genre = "Ficción",
+                Price = 7.99M,
+                Rating = "123",
+                Estado = EstadoLibro.Disponible
+            },
+            new Libro
+            {
+                Nombre = "Cien Años de Soledad",
+                Autor = "Gabriel García Márquez",
+                ReleaseDate = DateTime.Parse("1967-05-30"),
+                Genre = "Realismo Mágico",
+                Price = 8.99M,
+                Rating = "123",
+                Estado = EstadoLibro.Disponible
+            },
+            new Libro
+            {
+                Nombre = "El Nombre del Viento",
+                Autor = "Patrick Rothfuss",
+                ReleaseDate = DateTime.Parse("2007-03-27"),
+                Genre = "Fantasía",
+                Price = 9.99M,
+                Rating = "123",
+                Estado = EstadoLibro.Disponible
+            },
+            new Libro
+            {
+                Nombre = "1984",
+                Autor = "George Orwell",
+                ReleaseDate = DateTime.Parse("1949-06-08"),
+                Genre = "Distopía",
+                Price = 3.99M,
+                Rating = "123",
+                Estado = EstadoLibro.Disponible
+            }
+
             );
             context.SaveChanges();
         }
