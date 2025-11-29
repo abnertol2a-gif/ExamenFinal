@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using WebApplication1.Data;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -190,5 +191,34 @@ namespace WebApplication1.Controllers
         {
             return _context.Movie.Any(e => e.Id == id);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> ToggleEstado(int id)
+        {
+            var movie = await _context.Movie.FindAsync(id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            // Cambiar el estado según lo actual
+            if (movie.Estado == EstadoLibro.Disponible)
+            {
+                movie.Estado = EstadoLibro.Prestado;
+            }
+            else if (movie.Estado == EstadoLibro.Prestado)
+            {
+                movie.Estado = EstadoLibro.Disponible;
+            }
+
+            // Guardar cambios en la BD
+            _context.Update(movie);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
